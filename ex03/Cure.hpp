@@ -16,17 +16,16 @@
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 
+// issue was here, i had the protected _type variable here too
+// check why this was leaving the cure empty in the main
+
 class Cure : public AMateria {
-	protected:
-		std::string _type;
 	public:
 		Cure();
 		Cure(const Cure& cure);
-		Cure(std::string const & type);
 		Cure& operator=(const Cure& cure);
 		~Cure();
 
-		std::string const & getType() const; //Returns the materia type
 		Cure* clone() const;
 		void use(ICharacter& target);
 };

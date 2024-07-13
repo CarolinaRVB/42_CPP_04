@@ -6,13 +6,11 @@
 /*   By: crebelo- <crebelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 17:56:21 by crebelo-          #+#    #+#             */
-/*   Updated: 2024/07/08 23:57:47 by crebelo-         ###   ########.fr       */
+/*   Updated: 2024/07/09 19:33:59 by crebelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
-#include "ICharacter.hpp"
-class ICharacter;
 
 AMateria::AMateria() {
 	std::cout << "Default constructor AMateria called\n";
@@ -23,7 +21,8 @@ AMateria::AMateria(const AMateria& amateria) {
 	std::cout << "Copy constructor AMateria called\n";
 }
 
-AMateria::AMateria(std::string const & type) : _type (type) {
+AMateria::AMateria(std::string const & type) {
+	_type = type;
 	std::cout << "Name constructor AMateria called\n";
 }
 

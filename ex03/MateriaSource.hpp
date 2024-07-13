@@ -6,7 +6,7 @@
 /*   By: crebelo- <crebelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 21:46:33 by crebelo-          #+#    #+#             */
-/*   Updated: 2024/07/08 23:06:12 by crebelo-         ###   ########.fr       */
+/*   Updated: 2024/07/09 19:18:18 by crebelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ class MateriaSource : public IMateriaSource {
 		MateriaSource& operator=(const MateriaSource& materiasource);
 		
 	
-		~MateriaSource();
+		virtual ~MateriaSource();
 		void learnMateria(AMateria*);
 		AMateria* createMateria(std::string const & type);
 };

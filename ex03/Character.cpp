@@ -17,17 +17,28 @@ Character::Character() {
 	std::cout << "Default constructor for character\n";
 };
 
-Character::Character(const Character& character) {
-	*this = character;
+Character::Character(const Character& character) : _name(character._name) {
+	for (int i = 0; i < 100; i++) {
+		if (character._characters[i])
+			this->_characters[i] = character._characters[i]->clone();
+		else
+			this->_characters[i] = NULL;
+	}
+	for (int i = 0; i < 4; i++) {
+		if (character.materias[i])
+			this->materias[i] = character.materias[i]->clone();
+		else
+			this->materias[i] = NULL;
+	}
 	std::cout << "Copy constructor for character\n";
 }
 
 Character::Character(std::string character) : _name (character) {
 	for (int i = 0; i < 100; i++) {
-		this->_characters[i] = 0;
+		this->_characters[i] = NULL;
 	}
 	for (int i = 0; i < 4; i++) {
-		this->materias[i] = 0;
+		this->materias[i] = NULL;
 	}
 	std::cout << "Name constructor for character\n";
 };
@@ -38,25 +49,31 @@ Character&  Character::operator=(const Character& character) {
 	
 	this->_name = character._name;
 	for (int i = 0; i < 4; i++) {
+		if (this->materias[i])
+			delete this->materias[i];
 		if (character.materias[i])
 			this->materias[i] = character.materias[i]->clone();
+		else
+			this->materias[i] = NULL;
 	}
 	for (int i = 0; i < 100; i++) {
+		if (this->_characters[i])
+			delete this->_characters[i];
 		if (character._characters[i])
-			this->_characters[i] = character._characters[i];
+			this->_characters[i] = character._characters[i]->clone();
+		else
+			this->_characters[i] = NULL;
 	}
 	std::cout << "Copy assignement constructor for character\n";
 	return (*this);
 };
 
 Character::~Character() {
-	for (int i = 0; i < 4; i++) {
-		if (this->materias[i])
-			delete this->materias[i];
-	}
 	for (int i = 0; i < 100; i++) {
-		if (this->_characters[i])
+		if (this->_characters[i]){
 			delete this->_characters[i];
+			this->_characters[i] = NULL;
+		}
 	}
 	std::cout << "Destructor for character\n";
 }
@@ -88,7 +105,7 @@ void Character::unequip(int idx) {
 		std::cout << "Materia does't exist!\n";
 		return ;
 	}
-	this->materias[idx] = 0;
+	this->materias[idx] = NULL;
 	std::cout << "Materia was unequiped\n";
 };
 
