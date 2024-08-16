@@ -6,7 +6,7 @@
 /*   By: crebelo- <crebelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 14:55:44 by crebelo-          #+#    #+#             */
-/*   Updated: 2024/07/08 10:56:09 by crebelo-         ###   ########.fr       */
+/*   Updated: 2024/08/16 11:41:56 by crebelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,6 @@ class Brain
 		
 	private:
 		std::string ideas[100];
-		/* data */
 };
 
 

@@ -6,14 +6,17 @@
 /*   By: crebelo- <crebelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 23:40:14 by crebelo-          #+#    #+#             */
-/*   Updated: 2024/07/08 11:22:45 by crebelo-         ###   ########.fr       */
+/*   Updated: 2024/08/16 12:27:07 by crebelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 
 Cat::Cat() : brainCat (new Brain()) {
-	this->_type = "Cat";
+	_type = "Cat";
+	for (int i = 0; i < 100; i++){
+		brainCat->setIdeas("\0");
+	}
 	std::cout << "Default constructor for Cat called\n";
 }
 
@@ -48,5 +51,8 @@ void	Cat::setIdeas(std::string idea) const {
 }
 
 void Cat::showIdea(int index) const {
-	std::cout << this->brainCat->showIdeas(index);
+	if (index >= 0 && index < 100)
+		std::cout << brainCat->showIdeas(index);
+	else
+		std::cout << "Index out of bounds, no ideas here\n";
 }
