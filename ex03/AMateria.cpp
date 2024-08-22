@@ -13,36 +13,37 @@
 #include "AMateria.hpp"
 
 AMateria::AMateria() {
-	std::cout << "Default constructor AMateria called\n";
+	_type = "no materia";
+	// std::cout << "Default constructor AMateria called\n";
 }
 
 AMateria::AMateria(const AMateria& amateria) {
 	*this = amateria;
-	std::cout << "Copy constructor AMateria called\n";
+	// std::cout << "Copy constructor AMateria called\n";
 }
 
-AMateria::AMateria(std::string const & type) {
+AMateria::AMateria(std::string const &type) {
 	_type = type;
-	std::cout << "Name constructor AMateria called\n";
+	// std::cout << "Name constructor AMateria called\n";
 }
 
 AMateria& AMateria::operator=(const AMateria& amateria) {
 	if (this == &amateria) return (*this);
 
-	this->_type = amateria._type;
-	std::cout << "Copy assignement operator AMateria called\n";
+	_type = amateria._type;
+	// std::cout << "Copy assignement operator AMateria called\n";
 
 	return (*this);
 }
 
 AMateria::~AMateria() {
-	std::cout << "Default destructor called\n";
+	std::cout << "Default Amateria destructor called\n";
 }
 
 std::string const & AMateria::getType() const {
-	return (this->_type);
+	return (_type);
 }
 
 void AMateria::use(ICharacter& target) {
-	std::cout << this->getType() << " was used against " << target.getName() << std::endl;
+	std::cout << getType() << " was used against " << target.getName() << std::endl;
 }

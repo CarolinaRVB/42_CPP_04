@@ -21,7 +21,7 @@ class Character : public ICharacter {
 	private:
 		std::string _name;
 		std::string _index;
-		AMateria *_characters[100];	// store addresses of every materia used;
+		AMateria *_allmaterias[100];		// store addresses of every materia used;
 		AMateria *materias[4];			// store pointers to materias in stock
 
 	public:

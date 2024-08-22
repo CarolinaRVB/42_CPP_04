@@ -12,7 +12,8 @@
 
 NAME := ex02
 
-SRC := AAnimal.cpp \
+SRC := Animal.cpp \
+	   AAnimal.cpp \
  	   Cat.cpp \
 	   Dog.cpp \
 	   Brain.cpp \

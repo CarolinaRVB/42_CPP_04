@@ -66,8 +66,6 @@ int main(){
 	animals[5]->makeSound();
 
 	std::cout << "\n################################### Ending ###################################\n\n";
-	
-
 	for (int i = 0; i < 10; i++){
 		delete animals[i];
 	}
