@@ -6,7 +6,7 @@
 /*   By: crebelo- <crebelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/08 17:56:22 by crebelo-          #+#    #+#             */
-/*   Updated: 2024/07/09 00:23:20 by crebelo-         ###   ########.fr       */
+/*   Updated: 2024/08/21 20:00:54 by crebelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,13 @@
 
 #include <iostream>
 #include "ICharacter.hpp"
+
+/*
+	The line class ICharacter; is a forward declaration. It tells the compiler
+	that ICharacter is a class type that will be defined later. This allows the 
+	compiler to know that ICharacter exists without needing its full definition 
+	at that point in the code.
+*/
 
 class ICharacter;
 

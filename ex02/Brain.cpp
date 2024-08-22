@@ -6,7 +6,7 @@
 /*   By: crebelo- <crebelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/05 14:56:41 by crebelo-          #+#    #+#             */
-/*   Updated: 2024/07/08 11:05:40 by crebelo-         ###   ########.fr       */
+/*   Updated: 2024/08/16 12:11:48 by crebelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ void	Brain::setIdeas(std::string idea) {
 }
 
 std::string Brain::showIdeas(int index) {
+	if (index < 0 || index >= 100 )
+		return ("WRONG INDEX");
 	if (!this->ideas[index][0]) {
-		return ("Empty thoughts");
+		return ("Empty thoughts\n");
 	}
 	return (this->ideas[index]);
 }

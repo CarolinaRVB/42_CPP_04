@@ -6,7 +6,7 @@
 /*   By: crebelo- <crebelo-@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/04 23:40:28 by crebelo-          #+#    #+#             */
-/*   Updated: 2024/08/16 10:49:15 by crebelo-         ###   ########.fr       */
+/*   Updated: 2024/08/21 20:02:51 by crebelo-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,13 @@ int main(){
 	const AAnimal* j = new Dog();
 	const AAnimal* i = new Cat();
 	const AAnimal* animals[10];
+	
+	/*
+		Since AAnimal is an abstract class, the following line will give an error
+	*/
+	// const AAnimal a;
 
 	std::cout << "\n\n";
-	// const AAnimal animal;
 
 	for (int i = 0; i < 5; i++){
 		animals[i] = new Dog();
@@ -50,11 +54,24 @@ int main(){
 	
 	std::cout << "\n################################### Testing ###################################\n\n";
 	
+	std::cout << "Setting new idea for animal at index 5\n";
 	animals[5]->setIdeas("Cat had an idea\n");
+	std::cout << "Showing first idea of animal at index 5: ";
 	animals[5]->showIdea(0);
+	std::cout << "Setting new idea for animal at index 5\n";
 	animals[5]->setIdeas("Cat had an another briliant idea\n");
+	std::cout << "Showing second idea of animal at index 5: ";
 	animals[5]->showIdea(1);
+	
+	
+	std::cout << "Showing ideas that are empty: " ;
 	animals[5]->showIdea(2);
+	std::cout << "Showing ideas that are out of bounds: " ;
+	animals[5]->showIdea(100) ;
+	std::cout << "Showing ideas that are out of bounds: " ;
+	animals[5]->showIdea(-1);
+	
+
 	std::cout << "\n";
 	
 	std::cout << "This animal is a " << animals[4]->getType() << std::endl;
@@ -71,7 +88,7 @@ int main(){
 	}
 	
 	
-	delete j;//should not create a leak
+	delete j;
 	delete i;
 
 
